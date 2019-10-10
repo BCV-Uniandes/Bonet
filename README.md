@@ -1,12 +1,15 @@
 # **BoNet**
 
-This repository provides a PyTorch implementation of BoNet, presented in the paper [Hand Pose Estimation for Pediatric Bone Age Assessment](https://doi.org/10.1007/978-3-030-32226-7_60). Oral presentation at [MICCAI](https://www.miccai2019.org/),2019. 
+This repository provides a PyTorch implementation of BoNet, presented in the paper [Hand Pose Estimation for Pediatric Bone Age Assessment](https://doi.org/10.1007/978-3-030-32226-7_60). Oral presentation at [MICCAI,2019](https://www.miccai2019.org/). BoNet leverages local information and significantly outperforms state-of-the-art methods in Bone Age Assessment (BAA). We propose a new experimental framework with hand detection and hand pose estimation as new tasks to extract local information for BAA methods. We also introduce the Radiological Hand Pose Estimation (RHPE) dataset. Thanks to its fine-grained and precisely localized annotations, our dataset will allow to exploit local information to push forward automated BAA algorithms. To ensure reproducibility of our results and to promote further research on
+BAA we created the [Bone Age Assessment Resources (BAAR)](https://malik.uniandes.edu.co/baar). 
 <br/>
 
+## Bone Age Assessment Resources
+We created the [Bone Age Assessment Resources (BAAR)](https://malik.uniandes.edu.co/BAAR) as a platform for promoting the development of BAA algorithms. In the BAAR you can download the RSNA and RHPE [datasets](https://malik.uniandes.edu.co/baar/dataset) with keypoints, bounding box and boneage annotations for the training and validation sets. Additionally, you can explore an overview of the methods BCV has developed for this task. Finally, the BAAR include an [evaluation server](https://malik.uniandes.edu.co/baar/evaluation) for the test set of RHPE and RSNA
 ## Paper
 [Hand Pose Estimation for Pediatric Bone Age Assessment](https://doi.org/10.1007/978-3-030-32226-7_60) <br/>
 [María Escobar](https://mc-escobar11.github.io/)<sup> 1* </sup>, [Cristina González](https://cigonzalez.github.io/)<sup> 1* </sup>, [Felipe Torres](https://ftorres11.github.io/) <sup>1</sup>,[Laura Daza](https://sites.google.com/view/ldaza/en)<sup>1</sup>, [Gustavo Triana](http://radiologiafsfb.org/site/index.php?option=com_content&view=category&id=176&Itemid=332)<sup>2</sup>, [Pablo Arbeláez](https://scholar.google.com.co/citations?user=k0nZO90AAAAJ&hl=en)<sup>1</sup> <br/>
-<sup>*</sup>Equal contribution.
+<sup>*</sup>Equal contribution.<br/>
 <sup>1 </sup>Biomedical Computer Vision ([BCV](https://biomedicalcomputervision.uniandes.edu.co/)) Lab, Universidad de Los Andes. <br/>
 <sup>2 </sup>Radiology department, Fundación Santa Fe de Bogotá. <br/>
 <br/>
@@ -26,51 +29,6 @@ This repository provides a PyTorch implementation of BoNet, presented in the pap
 
 ```
 <br/>
-
-## Dependencies
-* [Python](https://www.continuum.io/downloads) (2.7, 3.5+)
-* [PyTorch](http://pytorch.org/) (0.3, 0.4, 1.0)
-<br/>
-
-## Usage
-
-### Cloning the repository
-```bash
-$ git clone https://github.com/BCV-Uniandes/SMIT.git
-$ cd SMIT
-```
-
-### Downloading the dataset
-To download the CelebA dataset:
-```bash
-$ bash generate_data/download.sh
-```
-
-### Train command:
-```bash
-./main.py --GPU=$gpu_id --dataset_fake=CelebA
-```
-Each dataset must has `datasets/<dataset>.py` and `datasets/<dataset>.yaml` files. All models and figures will be stored at `snapshot/models/$dataset_fake/<epoch>_<iter>.pth` and `snapshot/samples/$dataset_fake/<epoch>_<iter>.jpg`, respectivelly.
-
-### Test command:
-```bash
-./main.py --GPU=$gpu_id --dataset_fake=CelebA --mode=test
-```
-SMIT will expect the `.pth` weights are stored at `snapshot/models/$dataset_fake/` (or --pretrained_model=location/model.pth should be provided). If there are several models, it will take the last alphabetical one. 
-
-### Demo:
-```bash
-./main.py --GPU=$gpu_id --dataset_fake=CelebA --mode=test --DEMO_PATH=location/image_jpg/or/location/dir
-```
-DEMO performs transformation per attribute, that is swapping attributes with respect to the original input as in the images below. Therefore, *--DEMO_LABEL* is provided for the real attribute if *DEMO_PATH* is an image (If it is not provided, the discriminator acts as classifier for the real attributes).
-
-### [Pretrained models](http://marr.uniandes.edu.co/weights/SMIT)
-Models trained using Pytorch 1.0.
-
-### Multi-GPU
-For multiple GPUs we use [Horovod](https://github.com/horovod/horovod). Example for training with 4 GPUs:
-```bash
-mpirun -n 4 ./main.py --dataset_fake=CelebA
-```
+The source code for BoNet and pretrained models will be available soon.
 <br/>
 
