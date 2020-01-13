@@ -5,7 +5,7 @@ BAA we created the [Bone Age Assessment Resources (BAAR)](http://malik.uniandes.
 <br/>
 
 ## Bone Age Assessment Resources
-We created the [Bone Age Assessment Resources (BAAR)](http://malik.uniandes.edu.co/baar) as a platform for promoting the development of BAA algorithms. In the BAAR you can download the RSNA and RHPE [datasets](http://malik.uniandes.edu.co/baar/dataset) with keypoints, bounding box and boneage annotations for the training and validation sets. Additionally, you can explore an overview of the methods BCV has developed for this task. Finally, the BAAR include an [evaluation server](http://malik.uniandes.edu.co/baar/evaluation) for the test set of RHPE and RSNA
+We created the [Bone Age Assessment Resources (BAAR)](http://malik.uniandes.edu.co/baar) as a platform for promoting the development of BAA algorithms. In the BAAR you can download the RSNA and RHPE [datasets](http://malik.uniandes.edu.co/baar/dataset) with keypoints, bounding box and boneage annotations for the training and validation sets. Additionally, you can explore an overview of the [methods](http://malik.uniandes.edu.co/baar/methods) BCV has developed for this task. Finally, the BAAR include an [evaluation server](http://malik.uniandes.edu.co/baar/evaluation) for the test set of RHPE and RSNA
 ## Paper
 [Hand Pose Estimation for Pediatric Bone Age Assessment](https://link.springer.com/chapter/10.1007%2F978-3-030-32226-7_59) <br/>
 [María Escobar](https://mc-escobar11.github.io/)<sup> 1* </sup>, [Cristina González](https://cigonzalez.github.io/)<sup> 1* </sup>, [Felipe Torres](https://ftorres11.github.io/) <sup>1</sup>,[Laura Daza](https://sites.google.com/view/ldaza/en)<sup>1</sup>, [Gustavo Triana](http://radiologiafsfb.org/site/index.php?option=com_content&view=category&id=176&Itemid=332)<sup>2</sup>, [Pablo Arbeláez](https://scholar.google.com.co/citations?user=k0nZO90AAAAJ&hl=en)<sup>1</sup> <br/>
@@ -16,6 +16,32 @@ We created the [Bone Age Assessment Resources (BAAR)](http://malik.uniandes.edu.
 
 <p align="center"><img src="Figures/overview.png" /></p>
 
+
+## Dependencies
+* Pytorch 1.2.0
+* Pandas 0.24.2
+* Horovod 0.18.0
+* Tqdm 4.32.1
+* Scipy 1.3.0
+
+## Usage
+### Cloning the repository
+```bash
+$ git clone https://github.com/BCV-Uniandes/Bonet.git
+$ cd Bonet
+```
+### Train setup:
+Modify the routes in train_net.sh according to your local paths. 
+```bash
+bash train_net.sh
+```
+### Test setup:
+Modify the routes in test_net.sh according to your local paths. 
+```bash
+bash test_net.sh
+```
+## Pretrained models
+Pretrained models for BoNet are available [here](http://malik.uniandes.edu.co/static/baar/documents/models/)
 ## Citation
 ```
 @inproceedings{escobar2019hand,
@@ -28,7 +54,4 @@ We created the [Bone Age Assessment Resources (BAAR)](http://malik.uniandes.edu.
 }
 
 ```
-<br/>
-The source code for BoNet and pretrained models will be available soon.
-<br/>
 
